@@ -1,7 +1,9 @@
 package compass.homework_2_8.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.apache.commons.lang3.StringUtils;
 
+import java.util.Locale;
 import java.util.Objects;
 
 public class Employee {
@@ -14,8 +16,8 @@ public class Employee {
     private final double salary;
 
     public Employee(String name, String surname, int department, double salary) {
-        this.name = name;
-        this.surname = surname;
+        this.name = StringUtils.capitalize(name.toLowerCase());
+        this.surname = StringUtils.capitalize(surname.toLowerCase());
         this.department = department;
         this.salary = salary;
     }
